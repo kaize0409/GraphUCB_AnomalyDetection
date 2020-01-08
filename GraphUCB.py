@@ -108,28 +108,6 @@ class GraphUCB:
 		# neighborsFeatureVector = np.mean(neighborsFeatureVectorList, axis=0)
 		return neighborsFeatureVectorList
 
-	def getNeighborsFeatureVectorMap(self, node):
-		# import pdb
-		# pdb.set_trace()
-		neighborsFeatureVectorMap = OrderedDict({})
-
-		neighborsFeatureVectorMap[str(node.id)] = str(node.contextFeatureVector)
-
-		indexList = np.nonzero(self.W[node.id])[0]
-
-		if len(indexList) == 1:
-			neighborsFeatureVectorMap[str(node.id)] = str(node.contextFeatureVector)
-			return neighborsFeatureVectorMap
-
-		
-		for i in indexList:
-			# pdb.set_trace()
-			if self.all_nodes[i].id == node.id:
-				continue
-			neighborsFeatureVectorMap[str(self.all_nodes[i].id)] = str(self.all_nodes[i].contextFeatureVector)
-
-		return neighborsFeatureVectorMap
-
 	@staticmethod
 	def average(neighborsFeatureVectorList):
 		neighborsFeatureVector = np.mean(neighborsFeatureVectorList, axis=0)
