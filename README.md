@@ -1,1 +1,1 @@
-# mplementation of WSDM2019 -- Interactive Anomaly Detection on Attributed Networks
+# Implementation of WSDM2019 -- Interactive Anomaly Detection on Attributed Networks
